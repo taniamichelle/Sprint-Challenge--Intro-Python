@@ -23,8 +23,8 @@ humans = [
 
 # Write a list comprehension that creates a list of names of everyone
 # whose name starts with 'D':
-print("Starts with D:")
-a = []
+print("Starts with D: ")
+a = [h for h in str(humans) if h[0] == 'D']
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
