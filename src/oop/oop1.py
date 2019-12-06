@@ -21,7 +21,6 @@ class Vehicle:
     '''
     this is the Vehicle base (parent) class
     '''
-    pass
 
 class FlightVehicle(Vehicle):
     '''
