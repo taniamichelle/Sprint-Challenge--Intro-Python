@@ -29,6 +29,8 @@ print('age of h', h.age)
 # whose name starts with 'D':
 print("Starts with D: ")
 a = [d.name for d in humans if d.name[0] == 'D']
+# names = [n.name if n in humans if n.name.startswith('D')]
+# print(names)
 print(a)
 
 # Write a list comprehension that creates a list of names of everyone
@@ -51,11 +53,8 @@ print(d)
 # Write a list comprehension that creates a list of strings which are the name
 # joined to the age with a hyphen, for example "David-31", for all humans.
 print("Name hyphen age:")
-j = '-'
-j = j.join(humans)
-print(j)
-# e = [w.name.split('<Human: ') for w in humans and z.age for z in humans]
-# print(e)
+e = []
+print(e)
 
 # Write a list comprehension that creates a list of tuples containing name and
 # age, for example ("David", 31), for everyone between the ages of 27 and 32,
@@ -76,5 +75,5 @@ print(j)
 # Write a list comprehension that contains the square root of all the ages.
 print("Square root of ages:")
 import math
-h = []
+h = [r.sqrt]
 print(h)

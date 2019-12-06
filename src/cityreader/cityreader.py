@@ -25,13 +25,19 @@ def cityreader(cities=[]):
   # `cities` list
   import csv
   with open('cities.csv') as f:
-    data = csv.reader(f)
+    reader = csv.reader(f)
+    header = next(reader)
+    data = [row for row in reader]
     for row in data:
-      if row[0] != 0:
-        print('ROW START: ', row)
-      else: 
-        print('HEADER INCLUSION ERROR')
+      print('ROW START: ', row)
   return cities
+
+  # def citywriter(cities=[]):
+#   with open('cities.csv') as g:
+#     citywriter = csv.writer(g)
+#     citywriter.writerow(['Mania', 120, 2016])
+#     for row in citywriter:
+#       print('UPDATED CITIES: ', row)
 
 # instantiate instance of City
 c = City('Mania', 199, 133)
