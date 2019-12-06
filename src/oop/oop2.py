@@ -9,6 +9,7 @@ class GroundVehicle():
     def drive(self):
         return ("vroooom")  
 
+# instantiate instance of GroundVehicle to test
 g = GroundVehicle("Fred")
 print(g.name)
 print(g.num_wheels)
@@ -26,6 +27,7 @@ class Motorcycle(GroundVehicle):
     def drive(self):
         return ("BRAAAP!!")
 
+# instantiate instance of Motorcycle to test
 m = Motorcycle("Jillian")
 print(m.name)
 print(m.num_wheels)
@@ -39,24 +41,6 @@ vehicles = [
     Motorcycle(),
 ]
 
-# TODO: Go through the vehicles list and print the result of calling drive() on each.
-# print(GroundVehicle().drive())
-# print(GroundVehicle(3).drive())
-# print(Motorcycle(5).drive())
-# print(GroundVehicle(4).drive())
-# print(Motorcycle().drive())
+# Go through the vehicles list and print the result of calling drive() on each.
 for v in vehicles:
     print(v.drive())
-# vehicles2 = vehicles
-# vehicles = iter(vehicles)
-# start_next = GroundVehicle.drive()
-# while (1):
-#     val = next(vehicles, 'end')
-#     if val == 'end':
-#         print('list end')
-#         break
-#     else:
-#         print(val)
-# start_for = GroundVehicle.drive()
-# for i in vehicles2:
-#     print(i)
