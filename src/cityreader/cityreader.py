@@ -7,6 +7,9 @@ class City:
     self.lat = lat
     self.lon = lon
 
+  def __str__(self):
+    return f"City object: {self.name}, {self.lat}, {self.lon}"
+
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
 #
@@ -25,31 +28,33 @@ def cityreader(cities=[]):
   # `cities` list
   import csv
   with open('cities.csv') as f:
-    reader = csv.reader(f)
-    header = next(reader)
-    data = [row for row in reader]
-    for row in data:
-      print('ROW START: ', row)
+    reader = csv.reader(f, delimiter = ',')
+    # header = next(reader)
+    for row in reader:
+      if row[0] == 'city':
+        pass
+      else:
+        name = str(row[0])
+        # print('name', name)
+        lat = float(row[3])
+        lon = float(row[4])
+        # print('ROW START: ', row)
+        city = City(name, lat, lon)
+        cities.append(city)
   return cities
 
-  # def citywriter(cities=[]):
-#   with open('cities.csv') as g:
-#     citywriter = csv.writer(g)
-#     citywriter.writerow(['Mania', 120, 2016])
-#     for row in citywriter:
-#       print('UPDATED CITIES: ', row)
+cityreader(cities)
 
 # instantiate instance of City
-c = City('Mania', 199, 133)
-# print('c.name', c.name)
+# c = City(name, lat, lon)
+# print('c.name: ', c.name)
 # print('c.lat', c.lat)
 # print('c.lon', c.lon)
-cityreader(cities).append(c)
-print('updated city list: ', cities)
+
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 for c in cities:
-    print(c)
+    print('cities: ', c.name, c.lat, c.lon)
 
 # STRETCH GOAL!
 #
